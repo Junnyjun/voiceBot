@@ -1,0 +1,18 @@
+extends: existence                # check for unwanted words or phrases
+message: Don't use '%s'           # a message to display in the inspection tooltip when a matching fragment is found
+level: warning
+ignorecase: true
+scope: text.properties            # check only in texts (values) in *.properties files
+tokens:
+    - please                        # check single words
+    - check phrases as well
+    - 'some phrases need to be quoted, e.g., if they contain colons or start with quotes/apostrophes'
+---
+extends: substitution             # check for unwanted fragments and suggest replacements
+message: Consider using %s
+level: suggestion
+ignorecase: true
+swap:
+    check[ -]box: checkbox                      # keys are the regular expressions to find, values are the replacements
+    right-click menu: context menu|popup menu   # several replacement suggestions can be separated with |
+
