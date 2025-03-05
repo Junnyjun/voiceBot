@@ -31,6 +31,6 @@ interface PromptAdvisor {
     ) : PromptAdvisor {
 
         override fun advisor(): AbstractChatMemoryAdvisor<ChatMemory> =
-            QuestionAnswerAdvisor(VectorStoreChatMemoryAdvisor()
+            QuestionAnswerAdvisor(VectorStoreChatMemoryAdvisor())
     }
 }
